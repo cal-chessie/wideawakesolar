@@ -1574,8 +1574,8 @@ footer::before{content:'';position:absolute;inset:0;background-image:linear-grad
           <div class="ba-widget-sub">Enter an estimate or upload your bill — get your personalised savings report instantly. No sign-up needed.</div>
           <!-- Tabs -->
           <div class="ba-tabs">
-            <button class="ba-tab on" id="tabAmt" data-tab="amount">Enter Amount</button>
-            <button class="ba-tab" id="tabUpload" data-tab="upload">Upload Bill</button>
+            <button class="ba-tab on" id="tabAmt" data-tab="amount" onclick="setTab('amount')">Enter Amount</button>
+            <button class="ba-tab" id="tabUpload" data-tab="upload" onclick="setTab('upload')">Upload Bill</button>
           </div>
           <!-- Amount panel -->
           <div class="ba-amount-panel on" id="panelAmt">
@@ -1585,9 +1585,9 @@ footer::before{content:'';position:absolute;inset:0;background-image:linear-grad
               <input type="number" class="ba-amount-input" id="billAmount" placeholder="0" min="0" max="9999" oninput="onAmountChange()" aria-label="Monthly electricity bill amount in euro">
             </div>
             <div class="ba-period-row">
-              <button class="ba-period-btn on" data-p="monthly" data-period="monthly">Monthly</button>
-              <button class="ba-period-btn" data-p="quarterly" data-period="quarterly">Quarterly</button>
-              <button class="ba-period-btn" data-p="annual" data-period="annual">Annual</button>
+              <button class="ba-period-btn on" data-p="monthly" data-period="monthly" onclick="setPeriod(this,'monthly')">Monthly</button>
+              <button class="ba-period-btn" data-p="quarterly" data-period="quarterly" onclick="setPeriod(this,'quarterly')">Quarterly</button>
+              <button class="ba-period-btn" data-p="annual" data-period="annual" onclick="setPeriod(this,'annual')">Annual</button>
             </div>
           </div>
           <!-- Upload panel -->
@@ -1614,7 +1614,7 @@ footer::before{content:'';position:absolute;inset:0;background-image:linear-grad
             </div>
           </div>
           <!-- CTA -->
-          <button class="ba-cta" id="baCta" data-action="generateReport" disabled>
+          <button class="ba-cta" id="baCta" data-action="generateReport" onclick="generateReport()" disabled>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="flex-shrink-0"><path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z"/></svg> Generate My Free Report
           </button>
           <div class="ba-disclaimer">Free, instant and no obligation. Full detailed report sent to your email — enter details after generating.</div>
@@ -2456,6 +2456,11 @@ let billPeriod='monthly', billAmount=0;
 function switchTab(tab){
   document.getElementById('tabAmt').classList.toggle('on',tab==='amount');
   document.getElementById('tabUpload').classList.toggle('on',tab==='upload');
+  document.getElementById('panelAmt').classList.toggle('on',tab==='amount');
+  document.getElementById('panelUpload').classList.toggle('on',tab==='upload');
+}
+function setTab(tab){
+  document.querySelectorAll('.ba-tab').forEach(b=>b.classList.toggle('on',b.dataset.tab===tab));
   document.getElementById('panelAmt').classList.toggle('on',tab==='amount');
   document.getElementById('panelUpload').classList.toggle('on',tab==='upload');
 }
