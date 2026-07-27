@@ -92,3 +92,24 @@ Fonts: **Fraunces** (display) · **Plus Jakarta Sans** (body) · **DM Mono** (la
 ---
 
 Built by [SolarIreland](https://solarireland.ie)
+
+---
+
+## Pre-Launch Checklist
+
+The following items need to be completed before going live:
+
+### ✅ Done
+- Favicon set to pill logo
+- All images converted to WebP (83% size saving)
+- Accessibility: aria-labels added to all form inputs and simulator controls
+- SEO: meta tags, Open Graph, canonical URL, H1, viewport all set
+- Scripts: Three.js and Chart.js deferred
+
+### 🔲 Needs Dev / You
+- **OG image** — upload a real 1200×630px image to `/og-image.jpg` on the server and update the meta tag. This is what shows when the link is shared on WhatsApp, LinkedIn etc.
+- **Contact form** — form has no backend. Connect to Netlify Forms (free, one line of code if hosting on Netlify) or Formspree (free tier, works anywhere)
+- **Google Analytics** — create a GA4 property at analytics.google.com, get your `G-XXXXXXXXXX` ID and replace the placeholder in the `<head>`
+- **Images folder** — when deploying to a server, extract base64 images to an `/images/` folder and update `src` paths for better caching and performance
+- **Real photography** — site currently uses placeholder/stock imagery. Replace with real Wide Awake Solar project photos
+
