@@ -1544,7 +1544,7 @@ footer::before{content:'';position:absolute;inset:0;background-image:linear-grad
             <label class="ba-amount-label" for="billAmount">Your monthly electricity bill</label>
             <div class="ba-amount-wrap">
               <div class="ba-currency">€</div>
-              <input type="number" class="ba-amount-input" id="billAmount" placeholder="0" min="0" max="9999" oninput="onAmountChange()">
+              <input type="number" class="ba-amount-input" id="billAmount" placeholder="0" min="0" max="9999" oninput="onAmountChange()" aria-label="Monthly electricity bill amount in euro">
             </div>
             <div class="ba-period-row">
               <button class="ba-period-btn on" data-p="monthly" data-period="monthly">Monthly</button>
@@ -1558,7 +1558,7 @@ footer::before{content:'';position:absolute;inset:0;background-image:linear-grad
               <span class="ba-drop-icon">📄</span>
               <div class="ba-drop-title">Drop your bill here</div>
               <div class="ba-drop-sub">PDF, JPG or PNG — we extract the numbers automatically</div>
-              <input type="file" id="billFile" accept=".pdf,.jpg,.jpeg,.png" onchange="onFileUpload(this)">
+              <input type="file" id="billFile" accept=".pdf,.jpg,.jpeg,.png" onchange="onFileUpload(this)" aria-label="Upload your electricity bill">
             </div>
             <div class="ba-file-name" id="fileName"></div>
           </div>
@@ -1610,7 +1610,7 @@ footer::before{content:'';position:absolute;inset:0;background-image:linear-grad
         <div class="s-stat"><div class="s-stat-lbl">Sun elevation</div><div class="s-stat-val" id="sElev">52°</div></div>
         <div class="s-stat"><div class="s-stat-lbl">Generating now</div><div class="s-stat-val" id="sNowBig">4.2 kW</div></div>
       </div>
-      <input type="range" class="s-range" id="sTimeSlider" min="0" max="1440" value="720" step="5">
+      <input type="range" class="s-range" id="sTimeSlider" min="0" max="1440" value="720" step="5" aria-label="Time of day slider">
       <div class="s-ticks"><span class="s-tick">Midnight</span><span class="s-tick">6am</span><span class="s-tick">Noon</span><span class="s-tick">6pm</span><span class="s-tick">Midnight</span></div>
     </div>
   </div>
@@ -1644,28 +1644,28 @@ footer::before{content:'';position:absolute;inset:0;background-image:linear-grad
       <div class="sc-group">
         <div class="sc-label">Solar panels</div>
         <div><span class="sc-val" id="vPanels">12</span><span class="sc-unit">panels</span></div>
-        <input type="range" class="s-sl" id="sPanels" min="4" max="20" value="10" step="1">
+        <input type="range" class="s-sl" id="sPanels" min="4" max="20" value="10" step="1" aria-label="Number of solar panels">
         <div style="font-size:11px;color:var(--text3);margin-top:4px" id="vKwp">4.8 kWp system</div>
       </div>
       <div class="sc-group">
         <div class="sc-label">Panel wattage</div>
         <div><span class="sc-val" id="vWatt">400</span><span class="sc-unit">W each</span></div>
-        <input type="range" class="s-sl" id="sWatt" min="250" max="600" value="400" step="25">
+        <input type="range" class="s-sl" id="sWatt" min="250" max="600" value="400" step="25" aria-label="Panel wattage">
       </div>
       <div class="sc-group">
         <div class="sc-label">Panel tilt angle</div>
         <div><span class="sc-val" id="vTilt">35</span><span class="sc-unit">degrees</span></div>
-        <input type="range" class="s-sl g" id="sTilt" min="0" max="90" value="35" step="5">
+        <input type="range" class="s-sl g" id="sTilt" min="0" max="90" value="35" step="5" aria-label="Panel tilt angle">
       </div>
       <div class="sc-group">
         <div class="sc-label">System efficiency</div>
         <div><span class="sc-val" id="vEff">85</span><span class="sc-unit">%</span></div>
-        <input type="range" class="s-sl b" id="sEff" min="60" max="98" value="85" step="1">
+        <input type="range" class="s-sl b" id="sEff" min="60" max="98" value="85" step="1" aria-label="Panel efficiency">
       </div>
       <div class="sc-group">
         <div class="sc-label">Latitude</div>
         <div><span class="sc-val" id="vLat">53</span><span class="sc-unit">°N — Dublin</span></div>
-        <input type="range" class="s-sl" id="sLat" min="20" max="70" value="53" step="1">
+        <input type="range" class="s-sl" id="sLat" min="20" max="70" value="53" step="1" aria-label="Latitude">
       </div>
     </div>
     <!-- Month row -->
@@ -1906,9 +1906,9 @@ footer::before{content:'';position:absolute;inset:0;background-image:linear-grad
       </div>
       <div class="c-form-wrap reveal fade-right" data-delay="150">
         <form id="contactForm">
-          <div class="fg"><label>Full name</label><input type="text" placeholder="Your name" required></div>
-          <div class="fg"><label>Email address</label><input type="email" placeholder="you@example.com" required></div>
-          <div class="fg"><label>Phone number</label><input type="tel" placeholder="+353 87..."></div>
+          <div class="fg"><label>Full name</label><input type="text" placeholder="Your name" required aria-label="Your name"></div>
+          <div class="fg"><label>Email address</label><input type="email" placeholder="you@example.com" required aria-label="Email address"></div>
+          <div class="fg"><label>Phone number</label><input type="tel" placeholder="+353 87..." aria-label="Phone number"></div>
           <div class="fg"><label>I'm interested in</label>
             <select>
               <option value="">Select a package</option>
@@ -1919,7 +1919,7 @@ footer::before{content:'';position:absolute;inset:0;background-image:linear-grad
               <option>Not sure — advise me</option>
             </select>
           </div>
-          <div class="fg"><label for="contactMessage">Message</label><textarea placeholder="Tell us about your home and energy goals..."></textarea></div>
+          <div class="fg"><label for="contactMessage">Message</label><textarea placeholder="Tell us about your home and energy goals..." aria-label="Your message"></textarea></div>
           <input type="text" name="_honeypot" style="display:none!important" tabindex="-1" autocomplete="off">
           <button type="submit" class="btn-primary" style="width:100%;justify-content:center;border-radius:12px;padding:14px;font-size:15px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Request Free Quote</button>
         </form>
