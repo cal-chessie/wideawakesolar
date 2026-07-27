@@ -1,3 +1,5 @@
+![Wide Awake Solar](logo-pill.webp)
+
 # Wide Awake Solar
 
 **Empowering People. Transforming Energy.**
