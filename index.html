@@ -1574,8 +1574,8 @@ footer::before{content:'';position:absolute;inset:0;background-image:linear-grad
           <div class="ba-widget-sub">Enter an estimate or upload your bill — get your personalised savings report instantly. No sign-up needed.</div>
           <!-- Tabs -->
           <div class="ba-tabs">
-            <button class="ba-tab on" id="tabAmt" data-tab="amount" onclick="setTab('amount')">Enter Amount</button>
-            <button class="ba-tab" id="tabUpload" data-tab="upload" onclick="setTab('upload')">Upload Bill</button>
+            <button class="ba-tab on" id="tabAmt" data-tab="amount" onclick="switchTab('amount')">Enter Amount</button>
+            <button class="ba-tab" id="tabUpload" data-tab="upload" onclick="switchTab('upload')">Upload Bill</button>
           </div>
           <!-- Amount panel -->
           <div class="ba-amount-panel on" id="panelAmt">
@@ -2456,11 +2456,6 @@ let billPeriod='monthly', billAmount=0;
 function switchTab(tab){
   document.getElementById('tabAmt').classList.toggle('on',tab==='amount');
   document.getElementById('tabUpload').classList.toggle('on',tab==='upload');
-  document.getElementById('panelAmt').classList.toggle('on',tab==='amount');
-  document.getElementById('panelUpload').classList.toggle('on',tab==='upload');
-}
-function setTab(tab){
-  document.querySelectorAll('.ba-tab').forEach(b=>b.classList.toggle('on',b.dataset.tab===tab));
   document.getElementById('panelAmt').classList.toggle('on',tab==='amount');
   document.getElementById('panelUpload').classList.toggle('on',tab==='upload');
 }
