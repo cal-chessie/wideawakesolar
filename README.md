@@ -6,7 +6,13 @@
 
 Official website for Wide Awake Solar — Ireland's solar panel installation company offering custom solar systems, battery storage, EV charging and infrared heating with SEAI grants handled in full.
 
-🌐 [wideawakesolar.ie](https://wideawakesolar.ie)
+🌐 [wideawakesolar.ie](https://wideawakesolar.ie) · 👁️ [Preview](https://cal-chessie.github.io/wideawakesolar/)
+
+![Performance](https://img.shields.io/badge/Performance-96%2F100-brightgreen?style=flat-square&logo=lighthouse)
+![Accessibility](https://img.shields.io/badge/Accessibility-100%2F100-brightgreen?style=flat-square&logo=lighthouse)
+![SEO](https://img.shields.io/badge/SEO-100%2F100-brightgreen?style=flat-square&logo=lighthouse)
+![Best Practices](https://img.shields.io/badge/Best%20Practices-95%2F100-brightgreen?style=flat-square&logo=lighthouse)
+![File Size](https://img.shields.io/badge/File%20Size-264KB-blue?style=flat-square)
 
 ---
 
@@ -36,6 +42,11 @@ Single-page HTML website, fully self-contained in one `index.html` file. No buil
 - **3D Solar Simulator** — Three.js powered rooftop simulator with full solar physics, SEAI grant calculator (€1,800 + €300 EV), and real-time energy output modelling
 - **Mobile 2D Simulator** — Canvas-based touch simulator on mobile (≤768px) replacing Three.js for performance
 - **AI Bill Analyser** — Anthropic API powered tool that reads your electricity bill and calculates solar savings
+- **Cookie Consent Banner** — GDPR compliant, accept/decline, remembers choice via localStorage
+- **WhatsApp Click-to-Chat** — floating button linking directly to WhatsApp for instant leads
+- **Scroll Progress Bar** — branded gradient bar showing page scroll position
+- **Back to Top Button** — appears after 400px scroll, smooth scroll to top
+- **Print Stylesheet** — pricing section prints cleanly, nav/UI elements hidden
 - **Scroll animations** — 40 animated elements, `prefers-reduced-motion` respected
 - **SEO ready** — Meta tags, Open Graph, Twitter Cards, structured data
 - **Fully responsive** — Mobile-first design with custom mobile nav drawer
@@ -63,20 +74,22 @@ This is a static single-page site. Deploy anywhere that serves HTML:
 - **Netlify** — drag and drop `index.html` or connect this repo for auto-deploy
 - **Cloudflare Pages** — connect repo, no build command needed
 - **Vercel** — connect repo, framework = Other
+- **GitHub Pages** — already enabled, live at [cal-chessie.github.io/wideawakesolar](https://cal-chessie.github.io/wideawakesolar/)
 - **Traditional hosting** — upload `index.html` to public root via FTP/SFTP
 
 No build step required.
 
 ---
 
-## Future Development
+## Logo Files
 
-When moving to a multi-page structure:
-- Extract base64 images to `/images/` folder
-- Connect nav links between pages
-- Add real form backend (Netlify Forms, Formspree, or custom)
-- Replace placeholder Google Analytics ID
-- Add real photography
+| File | Use |
+|---|---|
+| `logo-pill.webp` | Favicon, nav bar, mobile drawer (8KB) |
+| `logo-colour.webp` | General colour use, social media (21KB) |
+| `logo-colour.png` | Print, high-res fallback (183KB) |
+| `logo-white.webp` | Dark backgrounds (7KB) |
+| `logo-white.png` | Print fallback (47KB) |
 
 ---
 
@@ -93,13 +106,7 @@ Fonts: **Fraunces** (display) · **Plus Jakarta Sans** (body) · **DM Mono** (la
 
 ---
 
-Built by [SolarIreland](https://solarireland.ie)
-
----
-
 ## Pre-Launch Checklist
-
-The following items need to be completed before going live:
 
 ### ✅ Done
 - Favicon set to pill logo
@@ -107,11 +114,20 @@ The following items need to be completed before going live:
 - Accessibility: aria-labels added to all form inputs and simulator controls
 - SEO: meta tags, Open Graph, canonical URL, H1, viewport all set
 - Scripts: Three.js and Chart.js deferred
+- GDPR cookie consent banner
+- WhatsApp click-to-chat button
+- Scroll progress bar
+- Back to top button
+- Print stylesheet
+- GitHub Pages live
 
 ### 🔲 Needs Dev / You
-- **OG image** — upload a real 1200×630px image to `/og-image.jpg` on the server and update the meta tag. This is what shows when the link is shared on WhatsApp, LinkedIn etc.
-- **Contact form** — form has no backend. Connect to Netlify Forms (free, one line of code if hosting on Netlify) or Formspree (free tier, works anywhere)
-- **Google Analytics** — create a GA4 property at analytics.google.com, get your `G-XXXXXXXXXX` ID and replace the placeholder in the `<head>`
-- **Images folder** — when deploying to a server, extract base64 images to an `/images/` folder and update `src` paths for better caching and performance
-- **Real photography** — site currently uses placeholder/stock imagery. Replace with real Wide Awake Solar project photos
+- **WhatsApp number** — update the `wa.me/353000000000` number in the WhatsApp button to the real business number
+- **OG image** — upload a real 1200×630px image to `/og-image.jpg` on the server
+- **Contact form** — connect to Netlify Forms or Formspree (one line of code)
+- **Google Analytics** — replace `G-XXXXXXXXXX` with real GA4 ID from analytics.google.com
+- **Real photography** — replace placeholder imagery with real Wide Awake Solar project photos
 
+---
+
+Built by [SolarIreland](https://solarireland.ie)
